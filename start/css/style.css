@@ -1,0 +1,87 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul,
+ol {
+  list-style-type: none;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+button {
+  border: none;
+  appearance: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+body {
+  background-color: #f9d3d2;
+}
+
+.album {
+  width: 600px;
+  margin-inline: auto;
+  margin-block: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.album-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.album-main__img {
+  aspect-ratio: 3 / 2;
+}
+
+.album-main__caption {
+  font-style: italic;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.album-main__caption::before {
+  content: '「';
+}
+
+.album-main__caption::after {
+  content: '」';
+}
+
+.album-thumb {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.album-thumb img {
+  --thumb-size: calc(600px / 5);
+  flex: 0 0 var(--thumb-size);
+  height: var(--thumb-size);
+  border: 4px solid transparent;
+  border-radius: 50%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.album-thumb img:active {
+  scale: 0.95;
+}
+
+.album-thumb img.is-active {
+  border-color: #ea6662;
+}
